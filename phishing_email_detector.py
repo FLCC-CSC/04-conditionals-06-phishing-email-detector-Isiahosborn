@@ -9,31 +9,19 @@
 ########## ENTER YER CODE BELOW THIS LINE ##########
 
 def main():
-    original = input("Enter the email subject line: ")
-    s = original.strip().lower()  # normalize case for checks
+    s = input().strip().lower()  # read input without prompt and normalize
 
-    high_terms = ("urgent", "immediate", "immediately", "asap", "action required")
-    low_terms = ("password reset", "verify your identity", "suspicious login", "account locked")
-    med_terms = ("free", "prize", "lottery", "winner", "win", "offer")
-
-    if any(t in s for t in high_terms):
-        risk = "HIGH RISK: Possible phishing attempt."
-    elif any(t in s for t in low_terms):
-        risk = "LOW RISK: Verify legitimacy with sender."
-    elif any(t in s for t in med_terms):
-        risk = "MEDIUM RISK: Suspicious offer detected."
+    if ("urgent" in s) or ("immediate action required" in s):
+        print("HIGH RISK: Possible phishing attempt.")
+    elif ("win" in s) or ("free" in s):
+        print("MEDIUM RISK: Suspicious offer detected.")
+    elif "password reset" in s:
+        print("LOW RISK: Verify legitimacy with sender.")
     else:
-        risk = "No phishing indicators detected."
-
-    print()
-    print("SECURITY ASSESSMENT:")
-    print(risk)
-    print("------------------------")
-    print(f'Analyzed subject: "{original.strip()}"')
+        print("No phishing indicators detected.")
 
 if __name__ == "__main__":
     main()
-########### END YER CODE ABOVE THIS LINE ###########
 
 ########### END YER CODE ABOVE THIS LINE ###########
 
