@@ -8,7 +8,10 @@
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
 
-subject = input("Enter the email subject line: ")
+try:
+    subject = input("Enter the email subject line: ")
+except EOFError:
+    subject = ""
 
 print()
 
@@ -25,7 +28,7 @@ else:
     print("No phishing indicators detected.")
 
 print("------------------------")
-print(f'Analyzed subject: "{subject}"')
+print(f'Analyzed subject: \"{subject}\"")
 
 
 ########### END YER CODE ABOVE THIS LINE ###########
