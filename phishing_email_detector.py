@@ -9,18 +9,21 @@
 ########## ENTER YER CODE BELOW THIS LINE ##########
 
 def main():
-    s = input().strip().lower()  # read input without prompt and normalize
-
-    if not s:
-        print("No phishing indicators detected.")
-    elif ("urgent" in s) or ("immediate action required" in s):
-        print("HIGH RISK: Possible phishing attempt.")
-    elif ("win" in s) or ("free" in s):
-        print("MEDIUM RISK: Suspicious offer detected.")
-    elif "password reset" in s:
-        print("LOW RISK: Verify legitimacy with sender.")
-    else:
-        print("No phishing indicators detected.")
+    try:
+        while True:
+            s = input().strip().lower()
+            if not s:
+                print("No phishing indicators detected.")
+            elif ("urgent" in s) or ("immediate action required" in s):
+                print("HIGH RISK: Possible phishing attempt.")
+            elif ("win" in s) or ("free" in s):
+                print("MEDIUM RISK: Suspicious offer detected.")
+            elif "password reset" in s:
+                print("LOW RISK: Verify legitimacy with sender.")
+            else:
+                print("No phishing indicators detected.")
+    except EOFError:
+        pass
 
 if __name__ == "__main__":
     main()
