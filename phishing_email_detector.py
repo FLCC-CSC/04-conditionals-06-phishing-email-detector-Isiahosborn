@@ -8,30 +8,25 @@
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
 
-def main():
-    try:
-        while True:
-            print("Enter the email subject line: ", end="")
-            s = input().strip()
-            s_lower = s.lower()
-            print("\nSECURITY ASSESSMENT:")
-            if not s:
-                print("No phishing indicators detected.")
-            elif ("urgent" in s_lower) or ("immediate action required" in s_lower):
-                print("HIGH RISK: Possible phishing attempt.")
-            elif ("win" in s_lower) or ("free" in s_lower):
-                print("MEDIUM RISK: Suspicious offer detected.")
-            elif "password reset" in s_lower:
-                print("LOW RISK: Verify legitimacy with sender.")
-            else:
-                print("No phishing indicators detected.")
-            print("------------------------")
-            print(f'Analyzed subject: "{s}"')
-    except EOFError:
-        pass
+# Prompt the user for input
+subject = input("Enter the email subject line: ")
 
-if __name__ == "__main__":
-    main()
+# Convert to lowercase for case-insensitive matching
+subject_lower = subject.lower()
+
+print("\nSECURITY ASSESSMENT:")
+
+if ("urgent" in subject_lower) or ("immediate action required" in subject_lower):
+    print("HIGH RISK: Possible phishing attempt.")
+elif ("win" in subject_lower) or ("free" in subject_lower):
+    print("MEDIUM RISK: Suspicious offer detected.")
+elif "password reset" in subject_lower:
+    print("LOW RISK: Verify legitimacy with sender.")
+else:
+    print("No phishing indicators detected.")
+
+print("------------------------")
+print(f'Analyzed subject: "{subject}"')
 
 ########### END YER CODE ABOVE THIS LINE ###########
 
