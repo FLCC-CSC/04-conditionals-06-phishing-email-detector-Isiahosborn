@@ -8,11 +8,25 @@
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
 
-# Read the subject line (no prompt text so the output matches exactly)
-_ = input()
+subject = input("Enter the email subject line: ")
 
-# Print only the line expected by the tests, with no extra spaces/lines
+print()
+
 print("SECURITY ASSESSMENT:")
+
+s = subject.lower()
+if ("urgent" in s) or ("immediate action required" in s):
+    print("HIGH RISK: Possible phishing attempt.")
+elif ("win" in s) or ("free" in s):
+    print("MEDIUM RISK: Suspicious offer detected.")
+elif "password reset" in s:
+    print("LOW RISK: Verify legitimacy with sender.")
+else:
+    print("No phishing indicators detected.")
+
+print("------------------------")
+print(f'Analyzed subject: "{subject}"')
+
 
 ########### END YER CODE ABOVE THIS LINE ###########
 
