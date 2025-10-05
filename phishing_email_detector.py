@@ -21,7 +21,7 @@ def main():
         print("No phishing indicators detected.")
 
 if __name__ == "__main__":
-    main()
+    main() 
 
 ########### END YER CODE ABOVE THIS LINE ###########
 
