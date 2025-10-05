@@ -8,14 +8,24 @@
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
 
-full_name = 'Isiah Osborn'
+def main():
+    s = input().strip().lower()  # no prompt, normalize case
 
-# --- Case-sensitive check ---
-if 'Osb' in full_name:
-    print('PARTIAL MATCH (case-sensitive)')   # This will print
-else:
-    print('NO MATCH (case-sensitive)')
+    high_terms = ("urgent", "immediate", "immediately", "asap", "action required")
+    low_terms = ("password reset", "verify your identity", "suspicious login", "account locked")
+    med_terms = ("free", "prize", "lottery", "winner", "win", "offer")
 
+    if any(t in s for t in high_terms):
+        print("HIGH RISK: Possible phishing attempt.")
+    elif any(t in s for t in low_terms):
+        print("LOW RISK: Verify legitimacy with sender.")
+    elif any(t in s for t in med_terms):
+        print("MEDIUM RISK: Suspicious offer detected.")
+    else:
+        print("No phishing indicators detected.")
+
+if __name__ == "__main__":
+    main() 
 ########### END YER CODE ABOVE THIS LINE ###########
 
     
