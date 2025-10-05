@@ -8,36 +8,13 @@
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
 
-def assess_subject(subject: str) -> str:
-    s = subject.lower().strip()
+full_name = 'Isiah Osborn'
 
-    # HIGH RISK indicators: urgent money movement / transfers
-    if ("bank transfer" in s) or ("wire transfer" in s) or (
-        ("urgent" in s or "immediately" in s or "asap" in s)
-        and ("bank" in s or "transfer" in s or "payment" in s or "gift card" in s)
-    ):
-        return "HIGH RISK: Possible phishing attempt."
-
-    # MEDIUM RISK indicators: suspicious offers / winnings
-    if ("win" in s) or ("prize" in s) or ("lottery" in s) or ("free" in s) or ("offer" in s):
-        return "MEDIUM RISK: Suspicious offer detected."
-
-    # LOW RISK indicators: account/security notifications
-    if ("password reset" in s) or ("verify your identity" in s) or ("suspicious login" in s):
-        return "LOW RISK: Verify legitimacy with sender."
-
-    # Default
-    return "No phishing indicators detected."
-
-def main():
-    subject = input("Enter the email subject line: ")
-    print("SECURITY ASSESSMENT:")
-    print(assess_subject(subject))
-    print("------------------------")
-    print(f'Analyzed subject: "{subject}"')
-
-if __name__ == "__main__":
-    main()
+# --- Case-sensitive check ---
+if 'Osb' in full_name:
+    print('PARTIAL MATCH (case-sensitive)')   # This will print
+else:
+    print('NO MATCH (case-sensitive)')
 
 ########### END YER CODE ABOVE THIS LINE ###########
 
