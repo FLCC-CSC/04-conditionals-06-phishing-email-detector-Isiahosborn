@@ -11,17 +11,22 @@
 def main():
     try:
         while True:
-            s = input().strip().lower()
+            print("Enter the email subject line: ", end="")
+            s = input().strip()
+            s_lower = s.lower()
+            print("\nSECURITY ASSESSMENT:")
             if not s:
                 print("No phishing indicators detected.")
-            elif ("urgent" in s) or ("immediate action required" in s):
+            elif ("urgent" in s_lower) or ("immediate action required" in s_lower):
                 print("HIGH RISK: Possible phishing attempt.")
-            elif ("win" in s) or ("free" in s):
+            elif ("win" in s_lower) or ("free" in s_lower):
                 print("MEDIUM RISK: Suspicious offer detected.")
-            elif "password reset" in s:
+            elif "password reset" in s_lower:
                 print("LOW RISK: Verify legitimacy with sender.")
             else:
                 print("No phishing indicators detected.")
+            print("------------------------")
+            print(f'Analyzed subject: "{s}"')
     except EOFError:
         pass
 
