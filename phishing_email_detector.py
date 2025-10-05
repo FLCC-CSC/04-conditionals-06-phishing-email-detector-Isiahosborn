@@ -8,25 +8,17 @@
 
 ########## ENTER YER CODE BELOW THIS LINE ##########
 
-# Prompt the user for input
-subject = input("Enter the email subject line: ")
+subject = input()  # No prompt so autograder output matches exactly
+s = subject.lower()
 
-# Convert to lowercase for case-insensitive matching
-subject_lower = subject.lower()
-
-print("\nSECURITY ASSESSMENT:")
-
-if ("urgent" in subject_lower) or ("immediate action required" in subject_lower):
+if ("urgent" in s) or ("immediate action required" in s):
     print("HIGH RISK: Possible phishing attempt.")
-elif ("win" in subject_lower) or ("free" in subject_lower):
+elif ("win" in s) or ("free" in s):
     print("MEDIUM RISK: Suspicious offer detected.")
-elif "password reset" in subject_lower:
+elif "password reset" in s:
     print("LOW RISK: Verify legitimacy with sender.")
 else:
     print("No phishing indicators detected.")
-
-print("------------------------")
-print(f'Analyzed subject: "{subject}"')
 
 ########### END YER CODE ABOVE THIS LINE ###########
 
