@@ -11,7 +11,9 @@
 def main():
     s = input().strip().lower()  # read input without prompt and normalize
 
-    if ("urgent" in s) or ("immediate action required" in s):
+    if not s:
+        print("No phishing indicators detected.")
+    elif ("urgent" in s) or ("immediate action required" in s):
         print("HIGH RISK: Possible phishing attempt.")
     elif ("win" in s) or ("free" in s):
         print("MEDIUM RISK: Suspicious offer detected.")
@@ -21,7 +23,7 @@ def main():
         print("No phishing indicators detected.")
 
 if __name__ == "__main__":
-    main() 
+    main()
 
 ########### END YER CODE ABOVE THIS LINE ###########
 
