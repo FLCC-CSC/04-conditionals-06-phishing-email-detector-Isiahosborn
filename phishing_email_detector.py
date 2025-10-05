@@ -76,7 +76,7 @@ Analyzed subject: "Did you request a password reset?"
 '''
 
 1. Was using `in` difficult or was it natural?
-
+It felt natural. Python’s in reads like plain English, works on substrings, and pairs well with s.lower() and any() over a tuple of keywords
 
 
 
